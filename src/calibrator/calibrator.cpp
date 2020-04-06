@@ -16,7 +16,7 @@ cv::Mat Calibrator::affine(const std::vector<cv::Point>& data, const std::vector
 
 std::vector<cv::Point> Calibrator::center(const std::vector<cv::Point>& data) {
 	const cv::Point avg_data = std::accumulate(data.begin(), data.end(), cv::Point(0,0), std::plus<cv::Point>()) / static_cast<int>(data.size());
-
+	std::cout << "Offset:  "<< avg_data.x << " / " << avg_data.y << std::endl;
 	std::vector<cv::Point> centered;
 	for (const auto& pt : data)
     {  

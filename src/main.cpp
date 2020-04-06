@@ -31,15 +31,11 @@ int main( int argc, char** argv )
 		double xDiff = target[i].x - centered[i].x;
     	double yDiff = target[i].y - centered[i].y;
 		double result = std::sqrt((xDiff * xDiff) + (yDiff * yDiff));
-		std::cout << "Distance: " << result << std::endl;
+		
     	euclideanDist.push_back(result);
 	}
 
 	std::sort(euclideanDist.begin(), euclideanDist.end(),std::greater<int>());
-
-	for (const auto& dist: euclideanDist){
-		std::cout << dist << std::endl;
-	}
 
 	std::cout << matrix << std::endl;
 	std::cout <<  "mean: " << std::accumulate( euclideanDist.begin(), euclideanDist.end(), 0.0) / euclideanDist.size() << " min: " << *std::min_element(euclideanDist.begin(), euclideanDist.end()) << " max: " << *std::max_element(euclideanDist.begin(), euclideanDist.end()) <<std::endl;

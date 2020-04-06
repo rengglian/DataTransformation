@@ -2,6 +2,7 @@
 
 #include <opencv2/calib3d.hpp>
 #include <numeric>
+#include <iostream>
 
 class Calibrator {
 
